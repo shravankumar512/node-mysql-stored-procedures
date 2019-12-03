@@ -27,14 +27,12 @@ start-dbs:
 stop-dbs:
 	$(DOCKER_COMPOSE) -f $(DB_YML) down
 
-sh: dc-build-app
+sh: dc-build
 	$(DOCKER_COMPOSE) run --entrypoint=sh --service-ports --rm app
 
-lint: dc-build-app
+lint: dc-build
 	$(DOCKER_COMPOSE) run app run lint
 
-dc-build-app:
-	$(DOCKER_COMPOSE) build app
 
 # ---------- TEST ----------
 

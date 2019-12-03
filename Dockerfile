@@ -7,6 +7,7 @@ COPY package.json /tmp/package.json
 WORKDIR /code
 RUN  cd /tmp && \
     echo "npm installing" && \
+    # npm config set registry http://polaris-npm.berkadia.com && \
     npm install && \
     echo "done" && \
     npm cache clean --force && \
