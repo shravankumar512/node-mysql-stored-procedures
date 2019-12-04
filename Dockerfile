@@ -16,5 +16,5 @@ RUN  cd /tmp && \
 
 COPY . /code
 ENV NODE_ENV production
-# RUN npm run build
+RUN npm run build
 ENTRYPOINT ["node", "."]

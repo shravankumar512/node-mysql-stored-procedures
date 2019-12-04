@@ -2,12 +2,12 @@
   "name": "node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "babel src -s inline -d dist",
-    "dev": "nodemon -L --exec babel-node index.js",
-    "start": "babel-node --inspect=0.0.0.0:5858 index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -L --exec babel-node src/index.js",
+    "start": "npm run build && node dist/index.js",
+    "test": "npm run build && mocha --require @babel/register"
   },
   "author": "",
   "license": "ISC",
@@ -18,10 +18,12 @@
     "mysql": "~2.17.1"
   },
   "devDependencies": {
-    "@babel/cli": "~7.0.0-beta.40",
-    "@babel/core": "~7.0.0-beta.40",
-    "@babel/node": "~7.0.0-beta.40",
-    "@babel/register": "~7.0.0-beta.40",
-    "nodemon": "^1.18.11"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.4.0",
+    "@babel/register": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5"
   }
 }

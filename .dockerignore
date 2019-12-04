@@ -1,0 +1,6 @@
+dist/
+node_modules/
+Dockerfile
+test-results.xml
+.vscode/
+coverage/
