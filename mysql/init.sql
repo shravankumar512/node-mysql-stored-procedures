@@ -52,16 +52,14 @@ DELIMITER ;
 
 
 -- *** Store Procedure for GET User by ID ***
-DROP PROCEDURE IF EXISTS sp_updateUser;
+DROP PROCEDURE IF EXISTS sp_getUserById;
 
 DELIMITER $$
 
-CREATE PROCEDURE sp_updateUser (
-  in $id int,
-  in $full_name varchar(150)
+CREATE PROCEDURE sp_getUserById (
+  in $id int
 )
 BEGIN
-  update users set full_name = $full_name where id = $id;
   select * from users where id = $id;
 END$$
 
